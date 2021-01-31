@@ -6,6 +6,7 @@ const resolution = new THREE.Vector2()
 
 export const state = () => ({
   isMobile: false,
+  isLandscape: false
 })
 
 export const getters = {
@@ -21,5 +22,6 @@ export const mutations = {
   resize(state, { x, y }) {
     resolution.set(x, y)
     state.isMobile = x < 768
+    state.isLandscape = x > y
   },
 }

@@ -1,10 +1,23 @@
 <template lang="pug">
-Nuxt
+div(
+  :class = 'classnames'
+  )
+  Nuxt
 </template>
 
 <script>
 export default {
   computed: {
+    classnames() {
+      const { state } = this.$store
+
+      return {
+        'pc': !state.isMobile,
+        'mobile': state.isMobile,
+        'portrait': !state.isLandscape,
+        'landscape': state.isLandscape,
+      }
+    },
     webgl() {
       return this.$store.getters.webgl
     },
