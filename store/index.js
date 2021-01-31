@@ -6,7 +6,7 @@ const resolution = new THREE.Vector2()
 
 export const state = () => ({
   isMobile: false,
-  isLandscape: false
+  isLandscape: false,
 })
 
 export const getters = {

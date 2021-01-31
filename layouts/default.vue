@@ -2,7 +2,9 @@
 div(
   :class = 'classnames'
   )
-  Nuxt
+  .page
+    Nuxt
+  canvas#canvas-webgl
 </template>
 
 <script>
@@ -12,10 +14,10 @@ export default {
       const { state } = this.$store
 
       return {
-        'pc': !state.isMobile,
-        'mobile': state.isMobile,
-        'portrait': !state.isLandscape,
-        'landscape': state.isLandscape,
+        pc: !state.isMobile,
+        mobile: state.isMobile,
+        portrait: !state.isLandscape,
+        landscape: state.isLandscape,
       }
     },
     webgl() {
@@ -50,4 +52,15 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.page {
+  position: relative;
+  z-index: z(page);
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: z(canvas);
+}
+</style>

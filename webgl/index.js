@@ -11,12 +11,12 @@ export default class WebGLContent {
   }
 
   async init(resolution) {
-    const canvas = document.createElement('canvas')
+    const canvas = document.getElementById('canvas-webgl')
 
     this.renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
-      antialias: true
+      antialias: true,
     })
     this.renderer.setClearColor(0x000000, 0.0)
 
@@ -27,13 +27,6 @@ export default class WebGLContent {
         this.camera.start()
       }),
     ])
-
-    canvas.style = `
-      position: absolute;
-      top: 0;
-      left: 0;
-    `
-    document.body.append(canvas)
     this.resize(resolution)
   }
 
