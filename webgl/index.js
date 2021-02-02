@@ -8,6 +8,7 @@ export default class WebGLContent {
       autoStart: false,
     })
     this.camera = null
+    this.glTFLoader = null
   }
 
   async init(resolution) {
@@ -21,6 +22,10 @@ export default class WebGLContent {
     this.renderer.setClearColor(0x000000, 0.0)
 
     await Promise.all([
+      import('three/examples/jsm/loaders/GLTFLoader').then((module) => {
+        const Module = module.GLTFLoader
+        this.glTFLoader = new Module()
+      }),
       import('./Camera').then((module) => {
         const Module = module.default
         this.camera = new Module()

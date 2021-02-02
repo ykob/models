@@ -5,7 +5,16 @@ div
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    webgl() {
+      return this.$store.getters.webgl
+    },
+  },
+  created() {
+    console.log(this.webgl.glTFLoader)
+  },
+}
 </script>
 
 <style lang="scss" scoped></style>

@@ -2,13 +2,18 @@
 div(
   :class = 'classnames'
   )
-  .page
+  .page(
+    v-if = 'isLoaded'
+    )
     Nuxt
   canvas#canvas-webgl
 </template>
 
 <script>
 export default {
+  data: () => ({
+    isLoaded: false
+  }),
   computed: {
     classnames() {
       const { state } = this.$store
@@ -33,6 +38,7 @@ export default {
     this.update()
     await this.webgl.init(getters.resolution)
     this.webgl.start()
+    this.isLoaded = true
   },
   methods: {
     update() {
