@@ -12,7 +12,7 @@ div(
 <script>
 export default {
   data: () => ({
-    isLoaded: false
+    isLoaded: false,
   }),
   computed: {
     classnames() {

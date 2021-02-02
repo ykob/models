@@ -8,11 +8,13 @@ export default class WebGLContent {
       autoStart: false,
     })
     this.camera = null
+    this.controls = null
     this.glTFLoader = null
   }
 
   async init(resolution) {
     const canvas = document.getElementById('canvas-webgl')
+    let Controls
 
     this.renderer = new THREE.WebGLRenderer({
       canvas,
@@ -22,6 +24,9 @@ export default class WebGLContent {
     this.renderer.setClearColor(0x000000, 0.0)
 
     await Promise.all([
+      import('three/examples/jsm/controls/OrbitControls').then((module) => {
+        Controls = module.OrbitControls
+      }),
       import('three/examples/jsm/loaders/GLTFLoader').then((module) => {
         const Module = module.GLTFLoader
         this.glTFLoader = new Module()
@@ -32,6 +37,8 @@ export default class WebGLContent {
         this.camera.start()
       }),
     ])
+
+    this.controls = new Controls(this.camera, this.renderer.domElement)
     this.resize(resolution)
   }
 
@@ -44,6 +51,7 @@ export default class WebGLContent {
 
     // const time = this.clock.running === true ? this.clock.getDelta() : 0
 
+    this.controls.update()
     this.renderer.render(this.scene, this.camera)
   }
 
