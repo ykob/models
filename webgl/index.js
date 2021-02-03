@@ -10,6 +10,8 @@ export default class WebGLContent {
     this.camera = null
     this.controls = null
     this.glTFLoader = null
+    this.pointLight = null
+    this.ambientLight = null
   }
 
   async init(resolution) {
@@ -39,6 +41,11 @@ export default class WebGLContent {
     ])
 
     this.controls = new Controls(this.camera, this.renderer.domElement)
+    this.pointLight = new THREE.PointLight('#ffffff', 1, 100)
+    this.ambientLight = new THREE.AmbientLight('#cccccc')
+    this.pointLight.position.set(20, 20, 20)
+    this.scene.add(this.pointLight)
+    this.scene.add(this.ambientLight)
     this.resize(resolution)
   }
 
