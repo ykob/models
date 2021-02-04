@@ -12,7 +12,8 @@ export default class WebGLContent {
     this.glTFLoader = null
     this.pointLight = null
     this.ambientLight = null
-    this.models = {}
+    this.models = Array(4)
+    this.currentNum = 0
   }
 
   async init(resolution) {
@@ -62,26 +63,22 @@ export default class WebGLContent {
         await this.glTFLoader
           .loadAsync('/models/sword_v1.glb')
           .then((response) => {
-            model = response.scene.children
+            model = response.scene.children.find((o) => {
+              return o.name === 'Sword'
+            })
           })
-        this.models[id] = model.find((o) => {
-          return o.name === 'Sword'
-        })
-        this.scene.add(this.models[id])
         break
       default:
         break
     }
+
+    this.currentNum = (this.currentNum + 1) % this.models.length
+    this.models[this.currentNum] = model
+    this.scene.add(this.models[this.currentNum])
   }
 
   destroy(id) {
-    switch (id) {
-      case 'sword':
-        this.scene.remove(this.models[id])
-        break
-      default:
-        break
-    }
+    this.scene.remove(this.models[this.currentNum])
   }
 
   update() {
