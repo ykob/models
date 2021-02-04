@@ -2,6 +2,10 @@
 div
   h1
     |Sword
+  NuxtLink(
+    to = '/'
+    )
+    |Home
 </template>
 
 <script>
