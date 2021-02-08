@@ -8,9 +8,10 @@ export default class WebGLContent {
       autoStart: false,
     })
     this.camera = null
+    this.floor = null
     this.controls = null
     this.glTFLoader = null
-    this.pointLight = null
+    this.spotLight = null
     this.ambientLight = null
     this.models = Array(4)
     this.currentNum = 0
@@ -26,6 +27,7 @@ export default class WebGLContent {
       antialias: true,
     })
     this.renderer.setClearColor(0x000000, 0.0)
+    this.renderer.shadowMap.enabled = true
 
     await Promise.all([
       import('three/examples/jsm/controls/OrbitControls').then((module) => {
@@ -40,13 +42,22 @@ export default class WebGLContent {
         this.camera = new Module()
         this.camera.start()
       }),
+      import('./Floor').then((module) => {
+        const Module = module.default
+        this.floor = new Module()
+        this.floor.position.y = -10
+        this.floor.rotation.x = (-90 * Math.PI) / 180
+        this.scene.add(this.floor)
+      }),
     ])
 
     this.controls = new Controls(this.camera, this.renderer.domElement)
-    this.pointLight = new THREE.PointLight('#ffffff', 1, 100)
+    this.spotLight = new THREE.SpotLight('#ffffff', 2, 100, Math.PI / 4, 1)
     this.ambientLight = new THREE.AmbientLight('#cccccc')
-    this.pointLight.position.set(20, 20, 20)
-    this.scene.add(this.pointLight)
+    this.spotLight.position.set(0, 20, 0)
+    this.spotLight.castShadow = true
+    this.ambientLight.castShadow = true
+    this.scene.add(this.spotLight)
     this.scene.add(this.ambientLight)
     this.resize(resolution)
   }
@@ -73,6 +84,8 @@ export default class WebGLContent {
     }
 
     this.currentNum = (this.currentNum + 1) % this.models.length
+    model.castShadow = true
+    console.log(model)
     this.models[this.currentNum] = model
     this.scene.add(this.models[this.currentNum])
   }
