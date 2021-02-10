@@ -1,7 +1,8 @@
 <template lang="pug">
 div
-  h1
-    |{{ title }}
+  Outline(
+    :title = 'title'
+    )
   NuxtLink(
     to = '/'
     )
