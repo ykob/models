@@ -79,6 +79,9 @@ export default class WebGLContent {
             model = response.scene.children.find((o) => {
               return o.name === 'Sword'
             })
+            for (let i = 0; i < model.children.length; i++) {
+              model.children[i].castShadow = true
+            }
           })
         break
       default:
@@ -86,10 +89,6 @@ export default class WebGLContent {
     }
 
     this.currentNum = (this.currentNum + 1) % this.models.length
-    for (let index = 0; index < model.children.length; index++) {
-      const child = model.children[index]
-      child.castShadow = true
-    }
     this.models[this.currentNum] = model
     this.scene.add(this.models[this.currentNum])
   }
