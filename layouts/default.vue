@@ -46,13 +46,15 @@ export default {
       requestAnimationFrame(this.update)
     },
     resize() {
-      const { getters, commit } = this.$store
+      const { state, getters, commit } = this.$store
 
       commit('resize', {
         x: window.innerWidth,
         y: window.innerHeight,
       })
-      if (this.webgl) this.webgl.resize(getters.resolution)
+      if (this.webgl) {
+        this.webgl.resize(getters.resolution, state.isMobile, state.isLandscape)
+      }
     },
   },
 }
