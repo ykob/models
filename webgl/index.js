@@ -12,6 +12,9 @@ export default class WebGLContent {
     this.controls = null
     this.glTFLoader = null
     this.directionalLight = null
+    this.pointLight1 = null
+    this.pointLight2 = null
+    this.directionalLight = null
     this.ambientLight = null
     this.models = Array(4)
     this.currentNum = 0
@@ -53,17 +56,23 @@ export default class WebGLContent {
     ])
 
     this.controls = new Controls(this.camera, this.renderer.domElement)
-    this.directionalLight = new THREE.DirectionalLight('#cccccc', 0.5)
-    this.ambientLight = new THREE.AmbientLight('#cccccc')
-    this.directionalLight.position.set(0, 30, 30)
-    this.directionalLight.shadow.camera.top = 30
-    this.directionalLight.shadow.camera.right = 30
-    this.directionalLight.shadow.camera.bottom = -30
-    this.directionalLight.shadow.camera.left = -30
+    this.directionalLight = new THREE.DirectionalLight('#ffffff', 0.5)
+    this.pointLight1 = new THREE.PointLight('#ffffff', 0.2, 200)
+    this.pointLight2 = new THREE.PointLight('#ffffff', 0.2, 200)
+    this.ambientLight = new THREE.AmbientLight('#ffffff', 0.7)
+    this.directionalLight.position.set(0, 0.7, 1)
+    this.directionalLight.shadow.camera.top = 20
+    this.directionalLight.shadow.camera.right = 20
+    this.directionalLight.shadow.camera.bottom = -20
+    this.directionalLight.shadow.camera.left = -20
     this.directionalLight.castShadow = true
     this.directionalLight.shadow.mapSize.width = 2048
     this.directionalLight.shadow.mapSize.height = 2048
+    this.pointLight1.position.set(20, 0, 20)
+    this.pointLight2.position.set(-20, 0, -20)
     this.scene.add(this.directionalLight)
+    this.scene.add(this.pointLight1)
+    this.scene.add(this.pointLight2)
     this.scene.add(this.ambientLight)
     this.resize(resolution)
 
@@ -81,7 +90,7 @@ export default class WebGLContent {
     switch (id) {
       case 'sword':
         await this.glTFLoader
-          .loadAsync('/models/sword_v1.glb')
+          .loadAsync('/models/sword.glb')
           .then((response) => {
             model = response.scene.children.find((o) => {
               return o.name === 'Sword'
