@@ -3,10 +3,6 @@ div
   Outline(
     :title = 'title'
     )
-  NuxtLink(
-    to = '/'
-    )
-    |Home
 </template>
 
 <script>
