@@ -32,7 +32,7 @@ export default {
   h1 {
     line-height: 0.65;
     margin: 0;
-    font-size: 10rem;
+    font-size: 10vw;
     text-transform: uppercase;
   }
   .date {
