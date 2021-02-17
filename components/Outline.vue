@@ -37,9 +37,9 @@ export default {
   }
   .date {
     line-height: 1;
-    font-size: 2.2rem;
+    font-size: 2vw;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.09em;
   }
 }
 </style>
