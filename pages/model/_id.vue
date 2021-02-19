@@ -2,6 +2,7 @@
 div
   Outline(
     :title = 'title'
+    :update = 'update'
     )
 </template>
 
@@ -23,11 +24,12 @@ export default {
 
     return {
       title: page.title,
+      update: page.update,
     }
   },
   data: () => ({
     title: '',
-    date: '',
+    update: '',
   }),
   computed: {
     webgl() {

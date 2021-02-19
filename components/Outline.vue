@@ -4,7 +4,7 @@
     h1
       |{{ title }}
     p.date
-      |Upload: 1.23.2021
+      |Update: {{ update }}
 </template>
 
 <script>
@@ -13,6 +13,10 @@ export default {
     title: {
       type: String,
       default: '',
+    },
+    update: {
+      type: String,
+      default: '1.1.2021',
     },
   },
 }
@@ -40,6 +44,7 @@ export default {
     font-size: 2vw;
     font-weight: 700;
     letter-spacing: 0.09em;
+    text-transform: uppercase;
   }
 }
 </style>
