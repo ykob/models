@@ -9,7 +9,7 @@ div
 <script>
 export default {
   asyncData({ error, params, store }) {
-    const page = store.state.pages.data.find((o) => {
+    const page = store.state.pages.find((o) => {
       return o.id === params.id
     })
 
