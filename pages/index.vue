@@ -12,12 +12,10 @@ div
 
 <script>
 export default {
-  async asyncData({ $axios }) {
-    const pages = await $axios.get('/pages.json')
-
-    return {
-      pages: pages.data,
-    }
+  computed: {
+    pages() {
+      return this.$store.state.pages
+    },
   },
 }
 </script>

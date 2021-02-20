@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import WebGLContent from '@/webgl/'
+import pages from '@/assets/pages.json'
 
 const webgl = new WebGLContent()
 const resolution = new THREE.Vector2()
@@ -7,6 +8,7 @@ const resolution = new THREE.Vector2()
 export const state = () => ({
   isMobile: false,
   isLandscape: false,
+  pages,
 })
 
 export const getters = {

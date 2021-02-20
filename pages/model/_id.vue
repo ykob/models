@@ -8,9 +8,8 @@ div
 
 <script>
 export default {
-  async asyncData({ error, params, $axios }) {
-    const pages = await $axios.get('/pages.json')
-    const page = pages.data.find((o) => {
+  asyncData({ error, params, store }) {
+    const page = store.state.pages.data.find((o) => {
       return o.id === params.id
     })
 
