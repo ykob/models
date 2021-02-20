@@ -1,3 +1,5 @@
+import pages from './assets/pages.json'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -75,5 +77,13 @@ export default {
       '@/assets/css/functions.scss',
       '@/assets/css/mixins.scss',
     ],
+  },
+
+  generate: {
+    routes() {
+      return pages.map(page => {
+        return `model/${page.id}`
+      })
+    },
   },
 }
