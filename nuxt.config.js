@@ -80,6 +80,7 @@ export default {
   },
 
   generate: {
+    fallback: true,
     routes() {
       return pages.map(page => {
         return `model/${page.id}`
