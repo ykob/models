@@ -35,7 +35,15 @@ export default {
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs: [
+      '@/components',
+      {
+        path: '@/components/icon/',
+        prefix: 'Icon',
+      },
+    ],
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -87,7 +95,7 @@ export default {
   generate: {
     fallback: true,
     routes() {
-      return pages.map(page => {
+      return pages.map((page) => {
         return `model/${page.id}`
       })
     },
