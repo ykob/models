@@ -34,16 +34,11 @@ export default {
     pointer-events: auto;
   }
   h1 {
-    line-height: 0.65;
     margin: 0;
-    font-size: 10vw;
-    text-transform: uppercase;
+    font-size: 9vw;
   }
   .date {
-    line-height: 1;
     font-size: 2vw;
-    font-weight: 700;
-    letter-spacing: 0.09em;
     text-transform: uppercase;
   }
 }
