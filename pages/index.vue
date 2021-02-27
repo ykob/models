@@ -5,6 +5,21 @@
       |Models
     p
       |It is my learning records of Blender.
+    .links
+      a(
+        href = 'https://github.com/ykob/models'
+        target = '_blank'
+        )
+        IconGithub(
+          :size = '40'
+          )
+      a(
+        href = 'https://twitter.com/ykob0123'
+        target = '_blank'
+        )
+        IconTwitter(
+          :size = '40'
+          )
 </template>
 
 <script>
@@ -23,6 +38,7 @@ export default {}
   align-items: center;
 }
 .content {
+  pointer-events: auto;
   text-align: center;
 }
 h1 {
@@ -31,5 +47,14 @@ h1 {
 }
 p {
   font-size: 2vw;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  a {
+    display: block;
+    margin-right: 0.5vw;
+    margin-left: 0.5vw;
+  }
 }
 </style>
