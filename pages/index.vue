@@ -6,19 +6,27 @@
     p
       |It is my learning records of Blender.
     .links
-      a(
+      Button(
+        tag = 'a'
+        width = '40px'
+        height = '40px'
         href = 'https://github.com/ykob/models'
         target = '_blank'
         )
         IconGithub(
           :size = '40'
+          fill = '#222222'
           )
-      a(
+      Button(
+        tag = 'a'
+        width = '40px'
+        height = '40px'
         href = 'https://twitter.com/ykob0123'
         target = '_blank'
         )
         IconTwitter(
           :size = '40'
+          fill = '#222222'
           )
 </template>
 

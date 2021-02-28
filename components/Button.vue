@@ -48,9 +48,7 @@ export default Vue.extend({
       }
     },
     classnames() {
-      return [
-        `${this.role}`
-      ]
+      return [`${this.role}`]
     },
   },
 })
