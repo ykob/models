@@ -5,29 +5,6 @@
       |Models
     p
       |It is my learning records of Blender.
-    .links
-      Button(
-        tag = 'a'
-        width = '40px'
-        height = '40px'
-        href = 'https://github.com/ykob/models'
-        target = '_blank'
-        )
-        IconGithub(
-          :size = '40'
-          fill = '#222222'
-          )
-      Button(
-        tag = 'a'
-        width = '40px'
-        height = '40px'
-        href = 'https://twitter.com/ykob0123'
-        target = '_blank'
-        )
-        IconTwitter(
-          :size = '40'
-          fill = '#222222'
-          )
 </template>
 
 <script>
@@ -55,14 +32,5 @@ h1 {
 }
 p {
   font-size: 2vw;
-}
-.links {
-  display: flex;
-  justify-content: center;
-  a {
-    display: block;
-    margin-right: 0.5vw;
-    margin-left: 0.5vw;
-  }
 }
 </style>

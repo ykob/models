@@ -6,6 +6,7 @@ div(
     v-if = 'isLoaded'
     )
     Nuxt
+  ExternalLinks
   canvas#canvas-webgl
 </template>
 
