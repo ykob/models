@@ -8,7 +8,7 @@
     target = '_blank'
     )
     IconGithub(
-      :size = '40'
+      :size = 'iconSize'
       fill = '#222222'
       )
   Button(
@@ -19,7 +19,7 @@
     target = '_blank'
     )
     IconTwitter(
-      :size = '40'
+      :size = 'iconSize'
       fill = '#222222'
       )
 </template>
@@ -27,7 +27,15 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend()
+export default Vue.extend({
+  computed: {
+    iconSize() {
+      const { state } = this.$store
+
+      return state.isMobie ? 24 : 40
+    },
+  },
+})
 </script>
 
 <style lang="scss" scoped>
