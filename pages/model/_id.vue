@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  Outline(
+  ModelOutline(
     :title = 'title'
     :update = 'update'
     )
