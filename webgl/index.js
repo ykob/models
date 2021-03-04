@@ -32,6 +32,7 @@ export default class WebGLContent {
     this.renderer.setClearColor(0x000000, 0.0)
     this.renderer.shadowMap.enabled = true
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap
+    this.renderer.outputEncoding = THREE.GammaEncoding
 
     await Promise.all([
       import('three/examples/jsm/controls/OrbitControls').then((module) => {
