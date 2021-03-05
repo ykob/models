@@ -43,8 +43,14 @@ export default Vue.extend({
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 0;
-  right: 0;
+  .pc & {
+    top: 5%;
+    right: 5%;
+  }
+  .mobile & {
+    top: 12px;
+    right: 12px;
+  }
   a {
     display: block;
     margin-right: 0.5vw;
