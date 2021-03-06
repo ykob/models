@@ -2,8 +2,8 @@
 .external-links
   Button(
     tag = 'a'
-    width = '40px'
-    height = '40px'
+    :width = 'buttonSize'
+    :height = 'buttonSize'
     href = 'https://github.com/ykob/models'
     target = '_blank'
     )
@@ -13,8 +13,8 @@
       )
   Button(
     tag = 'a'
-    width = '40px'
-    height = '40px'
+    :width = 'buttonSize'
+    :height = 'buttonSize'
     href = 'https://twitter.com/ykob0123'
     target = '_blank'
     )
@@ -29,10 +29,15 @@ import Vue from 'vue'
 
 export default Vue.extend({
   computed: {
+    buttonSize() {
+      const { state } = this.$store
+
+      return state.isMobile ? '32px' : '40px'
+    },
     iconSize() {
       const { state } = this.$store
 
-      return state.isMobie ? 24 : 40
+      return state.isMobile ? 32 : 40
     },
   },
 })
@@ -41,20 +46,24 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .external-links {
   display: flex;
-  justify-content: center;
   position: fixed;
+  z-index: z(externalLinks);
   .pc & {
     top: 5%;
     right: 5%;
   }
   .mobile & {
-    top: 12px;
-    right: 12px;
+    top: 16px;
+    right: 16px;
   }
   a {
     display: block;
-    margin-right: 0.5vw;
-    margin-left: 0.5vw;
+    .pc & {
+      margin-left: 16px;
+    }
+    .mobile & {
+      margin-left: 8px;
+    }
   }
 }
 </style>
