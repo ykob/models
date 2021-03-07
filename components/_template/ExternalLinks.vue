@@ -4,6 +4,7 @@
     tag = 'a'
     :width = 'buttonSize'
     :height = 'buttonSize'
+    role = 'transparent'
     href = 'https://github.com/ykob/models'
     target = '_blank'
     )
@@ -15,6 +16,7 @@
     tag = 'a'
     :width = 'buttonSize'
     :height = 'buttonSize'
+    role = 'transparent'
     href = 'https://twitter.com/ykob0123'
     target = '_blank'
     )

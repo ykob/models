@@ -63,5 +63,14 @@ export default Vue.extend({
   line-height: 1;
   overflow: hidden;
   text-decoration: none;
+  &.common {
+    border: 0;
+    color: #fff;
+    background-color: #000;
+  }
+  &.transparent {
+    border: 0;
+    background-color: none;
+  }
 }
 </style>
