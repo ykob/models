@@ -5,10 +5,28 @@
       |Models
     p
       |It is my learning records of Blender.
+    .d-f.jc-c
+      Button(
+        tag = 'NuxtLink'
+        :to = 'to'
+        :width = 'isMobile ? "144px" : "180px"'
+        :height = 'isMobile ? "48px" : "56px"'
+        :radius = 'isMobile ? "24px" : "28px"'
+        )
+        |Enter
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    isMobile() {
+      return this.$store.state.isMobile
+    },
+    to() {
+      return `/model/${this.$store.state.pages[0].id}/`
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
