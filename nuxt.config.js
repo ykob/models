@@ -88,6 +88,7 @@ export default {
       '@/assets/css/variables.scss',
       '@/assets/css/functions.scss',
       '@/assets/css/mixins.scss',
+      '@/assets/css/utility/index.scss',
     ],
   },
 
