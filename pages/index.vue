@@ -4,7 +4,9 @@
     h1
       |Models
     p
-      |It is my learning records of Blender.
+      |It is my learning records 
+      br
+      |of Blender.
     .d-f.jc-c
       Button(
         tag = 'NuxtLink'
@@ -31,14 +33,20 @@ export default {
 
 <style lang="scss" scoped>
 .wrap {
-  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  .pc & {
+    right: 5%;
+    left: 5%;
+  }
+  .mobile & {
+    right: 16px;
+    left: 16px;
+  }
 }
 .content {
   pointer-events: auto;
@@ -46,9 +54,38 @@ export default {
 }
 h1 {
   margin: 0;
-  font-size: 9vw;
+  .pc.portrait & {
+    font-size: 10.8vw;
+  }
+  .pc.landscape & {
+    font-size: 9vw;
+  }
+  .mobile.portrait & {
+    font-size: 14vw;
+  }
+  .mobile.landscape & {
+    font-size: 9vw;
+  }
 }
 p {
-  font-size: 2vw;
+  line-height: 1.5;
+  .pc.portrait & {
+    font-size: 3vw;
+  }
+  .pc.landscape & {
+    font-size: 2.5vw;
+  }
+  .mobile.portrait & {
+    font-size: 3.88vw;
+  }
+  .mobile.landscape & {
+    font-size: 2.5vw;
+  }
+  br {
+    .pc &,
+    .mobile.landscape & {
+      display: none;
+    }
+  }
 }
 </style>
