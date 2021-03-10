@@ -81,9 +81,6 @@ export default class WebGLContent {
     this.scene.add(this.pointLight2)
     this.scene.add(this.ambientLight)
     this.resize(resolution)
-
-    // const helper = new THREE.CameraHelper(this.directionalLight.shadow.camera)
-    // this.scene.add(helper)
   }
 
   start() {
