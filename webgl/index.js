@@ -129,4 +129,19 @@ export default class WebGLContent {
     if (this.camera) this.camera.resize(resolution, isMobile, isLandscape)
     if (this.renderer) this.renderer.setSize(resolution.x, resolution.y)
   }
+
+  enableControl() {
+    if (this.controls) {
+      this.controls.enabled = true
+      this.controls.autoRotate = true
+    }
+  }
+
+  disableControl() {
+    if (this.controls) {
+      this.controls.reset()
+      this.controls.enabled = false
+      this.controls.autoRotate = false
+    }
+  }
 }

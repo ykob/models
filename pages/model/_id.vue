@@ -37,6 +37,7 @@ export default {
   },
   created() {
     this.webgl.load(this.$route.params.id)
+    this.webgl.enableControl()
   },
   destroyed() {
     this.webgl.destroy(this.$route.params.id)

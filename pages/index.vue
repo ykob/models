@@ -21,12 +21,18 @@
 <script>
 export default {
   computed: {
+    webgl() {
+      return this.$store.getters.webgl
+    },
     isMobile() {
       return this.$store.state.isMobile
     },
     to() {
       return `/model/${this.$store.state.pages[0].id}/`
     },
+  },
+  created() {
+    this.webgl.disableControl()
   },
 }
 </script>
