@@ -66,7 +66,7 @@ export default class WebGLContent {
     this.pointLight1 = new THREE.PointLight('#ffffff', 0.2, 200)
     this.pointLight2 = new THREE.PointLight('#ffffff', 0.2, 200)
     this.ambientLight = new THREE.AmbientLight('#ffffff', 0.7)
-    this.directionalLight.position.set(0, 0.7, 1)
+    this.directionalLight.position.set(-0.25, 1, 0.25)
     this.directionalLight.shadow.camera.top = 20
     this.directionalLight.shadow.camera.right = 20
     this.directionalLight.shadow.camera.bottom = -20
