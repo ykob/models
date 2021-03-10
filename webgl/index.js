@@ -57,6 +57,11 @@ export default class WebGLContent {
     ])
 
     this.controls = new Controls(this.camera, this.renderer.domElement)
+    this.controls.dampingFactor = 0.1
+    this.controls.enabled = false
+    this.controls.enableDamping = true
+    this.controls.enablePan = false
+    this.controls.rotateSpeed = 0.8
     this.directionalLight = new THREE.DirectionalLight('#ffffff', 0.5)
     this.pointLight1 = new THREE.PointLight('#ffffff', 0.2, 200)
     this.pointLight2 = new THREE.PointLight('#ffffff', 0.2, 200)
