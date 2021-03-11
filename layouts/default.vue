@@ -31,13 +31,13 @@ export default {
     },
   },
   async mounted() {
-    const { getters } = this.$store
+    const { state } = this.$store
 
     window.addEventListener('resize', this.resize)
 
     this.resize()
     this.update()
-    await this.webgl.init(getters.resolution)
+    await this.webgl.init(state.resolution)
     this.webgl.start()
     this.isLoaded = true
   },
@@ -47,14 +47,14 @@ export default {
       requestAnimationFrame(this.update)
     },
     resize() {
-      const { state, getters, commit } = this.$store
+      const { state, commit } = this.$store
 
       commit('resize', {
         x: window.innerWidth,
         y: window.innerHeight,
       })
       if (this.webgl) {
-        this.webgl.resize(getters.resolution, state.isMobile, state.isLandscape)
+        this.webgl.resize(state.resolution, state.isLandscape)
       }
     },
   },

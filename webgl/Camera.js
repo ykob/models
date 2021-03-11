@@ -22,9 +22,11 @@ export default class Camera extends THREE.PerspectiveCamera {
     this.time += time
   }
 
-  resize(resolution, isMobile, isLandscape) {
+  resize(resolution) {
+    const isLandscape = resolution.x > resolution.y
+
     this.aspect = resolution.x / resolution.y
-    if (isMobile && !isLandscape) {
+    if (!isLandscape) {
       this.clearViewOffset()
     } else {
       this.setViewOffset(

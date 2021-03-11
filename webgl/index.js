@@ -127,8 +127,8 @@ export default class WebGLContent {
     this.renderer.render(this.scene, this.camera)
   }
 
-  resize(resolution, isMobile, isLandscape) {
-    if (this.camera) this.camera.resize(resolution, isMobile, isLandscape)
+  resize(resolution, isLandscape) {
+    if (this.camera) this.camera.resize(resolution, isLandscape)
     if (this.renderer) this.renderer.setSize(resolution.x, resolution.y)
   }
 
