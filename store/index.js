@@ -6,6 +6,7 @@ const webgl = new WebGLContent()
 export const state = () => ({
   isMobile: false,
   isLandscape: false,
+  isLoadedWebGL: false,
   pages,
   resolution: {
     x: 0,
@@ -25,5 +26,8 @@ export const mutations = {
     state.resolution.y = y
     state.isMobile = x < 768
     state.isLandscape = x > y
+  },
+  loadedWebGL(state) {
+    state.isLoadedWebGL = true
   },
 }

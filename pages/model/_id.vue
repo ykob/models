@@ -35,12 +35,26 @@ export default {
       return this.$store.getters.webgl
     },
   },
-  created() {
-    this.webgl.load(this.$route.params.id)
-    this.webgl.enableControl()
+  watch: {
+    '$store.state.isLoadedWebGL'(v) {
+      if (v === true) {
+        this.loadWebGL()
+      }
+    },
+  },
+  mounted() {
+    if (this.$store.state.isLoadedWebGL) {
+      this.loadWebGL()
+    }
   },
   destroyed() {
     this.webgl.destroy(this.$route.params.id)
+  },
+  methods: {
+    loadWebGL() {
+      this.webgl.load(this.$route.params.id)
+      this.webgl.enableControl()
+    },
   },
 }
 </script>

@@ -31,7 +31,7 @@ export default {
       return `/model/${this.$store.state.pages[0].id}/`
     },
   },
-  created() {
+  mounted() {
     this.webgl.disableControl()
   },
 }

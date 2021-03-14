@@ -2,9 +2,7 @@
 div(
   :class = 'classnames'
   )
-  .page(
-    v-if = 'isLoaded'
-    )
+  .page
     Nuxt
   ExternalLinks
   canvas#canvas-webgl
@@ -12,9 +10,6 @@ div(
 
 <script>
 export default {
-  data: () => ({
-    isLoaded: false,
-  }),
   computed: {
     classnames() {
       const { state } = this.$store
@@ -31,7 +26,7 @@ export default {
     },
   },
   async mounted() {
-    const { state } = this.$store
+    const { state, commit } = this.$store
 
     window.addEventListener('resize', this.resize)
 
@@ -39,11 +34,11 @@ export default {
     this.update()
     await this.webgl.init(state.resolution)
     this.webgl.start()
-    this.isLoaded = true
+    commit('loadedWebGL')
   },
   methods: {
     update() {
-      if (this.webgl) this.webgl.update()
+      this.webgl.update()
       requestAnimationFrame(this.update)
     },
     resize() {
@@ -53,9 +48,7 @@ export default {
         x: window.innerWidth,
         y: window.innerHeight,
       })
-      if (this.webgl) {
-        this.webgl.resize(state.resolution, state.isLandscape)
-      }
+      this.webgl.resize(state.resolution, state.isLandscape)
     },
   },
 }
