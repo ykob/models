@@ -1,6 +1,7 @@
 <template lang="pug">
-div
-  |{{ error.statusCode }}
+.error
+  .error__message
+    |{{ error.statusCode }} {{ message }}
 </template>
 
 <script>
@@ -9,6 +10,16 @@ export default {
     error: {
       type: Object,
       default: null,
+    },
+  },
+  computed: {
+    message() {
+      switch (this.error.statusCode) {
+        case 404:
+          return 'Not Found'
+        default:
+          return ''
+      }
     },
   },
 }
