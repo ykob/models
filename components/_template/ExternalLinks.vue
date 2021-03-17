@@ -29,15 +29,14 @@
 <script>
 export default {
   computed: {
+    isMobile() {
+      return this.$store.state.isMobile
+    },
     buttonSize() {
-      const { state } = this.$store
-
-      return state.isMobile ? '32px' : '40px'
+      return this.isMobile ? '32px' : '40px'
     },
     iconSize() {
-      const { state } = this.$store
-
-      return state.isMobile ? 32 : 40
+      return this.isMobile ? 32 : 40
     },
   },
 }
