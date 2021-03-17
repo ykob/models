@@ -26,10 +26,8 @@
       )
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+<script>
+export default {
   computed: {
     buttonSize() {
       const { state } = this.$store
@@ -42,7 +40,7 @@ export default Vue.extend({
       return state.isMobile ? 32 : 40
     },
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

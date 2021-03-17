@@ -9,11 +9,10 @@ IconBase(
     )
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import { mdiChevronRight } from '@mdi/js'
 
-export default Vue.extend({
+export default {
   props: {
     size: {
       type: [Number, String],
@@ -29,5 +28,5 @@ export default Vue.extend({
       return mdiChevronRight
     },
   },
-})
+}
 </script>

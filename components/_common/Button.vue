@@ -10,9 +10,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
-
-export default Vue.extend({
+export default {
   props: {
     tag: {
       type: String,
@@ -51,7 +49,7 @@ export default Vue.extend({
       return [`${this.role}`]
     },
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>
