@@ -1,6 +1,6 @@
 <template lang="pug">
 IconBase(
-  iconName = 'clock'
+  iconName = 'chevron-right'
   :size = 'size'
   :fill = 'fill'
   )

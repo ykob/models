@@ -1,6 +1,6 @@
 <template lang="pug">
 IconBase(
-  iconName = 'clock'
+  iconName = 'twitter'
   :size = 'size'
   :fill = 'fill'
   )
