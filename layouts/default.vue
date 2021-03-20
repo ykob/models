@@ -2,6 +2,7 @@
 div(
   :class = 'classnames'
   )
+  Header
   .page
     Nuxt
   ExternalLinks
