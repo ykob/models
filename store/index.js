@@ -7,6 +7,7 @@ export const state = () => ({
   isMobile: false,
   isLandscape: false,
   isLoadedWebGL: false,
+  isShownHeader: false,
   pages,
   resolution: {
     x: 0,
@@ -29,5 +30,8 @@ export const mutations = {
   },
   loadedWebGL(state) {
     state.isLoadedWebGL = true
+  },
+  showHeader(state, bool) {
+    state.isShownHeader = bool
   },
 }

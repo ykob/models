@@ -43,6 +43,7 @@ export default {
     },
   },
   mounted() {
+    this.$store.commit('showHeader', true)
     if (this.$store.state.isLoadedWebGL) {
       this.loadWebGL()
     }

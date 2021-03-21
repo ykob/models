@@ -1,19 +1,16 @@
 <template lang="pug">
-.header
-  |Models
+transition
+  .header(
+    v-show = 'isShown'
+    )
+    |Models
 </template>
 
 <script>
 export default {
   computed: {
-    isMobile() {
-      return this.$store.state.isMobile
-    },
-    buttonSize() {
-      return this.isMobile ? '32px' : '40px'
-    },
-    iconSize() {
-      return this.isMobile ? 32 : 40
+    isShown() {
+      return this.$store.state.isShownHeader
     },
   },
 }

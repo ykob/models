@@ -32,6 +32,7 @@ export default {
     },
   },
   mounted() {
+    this.$store.commit('showHeader', false)
     this.webgl.disableControl()
   },
 }
