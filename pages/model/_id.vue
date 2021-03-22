@@ -30,6 +30,11 @@ export default {
     title: '',
     update: '',
   }),
+  head() {
+    return {
+      title: this.title,
+    }
+  },
   computed: {
     webgl() {
       return this.$store.getters.webgl
