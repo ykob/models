@@ -12,6 +12,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'models',
+    titleTemplate: '%s - models',
     meta: [
       { charset: 'utf-8' },
       {
