@@ -38,15 +38,16 @@ export default {
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: {
-    dirs: [
-      '@/components',
-      {
-        path: '@/components/icon/',
-        prefix: 'Icon',
-      },
-    ],
-  },
+  components: [
+    {
+      path: '@/components',
+      pathPrefix: false,
+    },
+    {
+      path: '@/components/icon/',
+      prefix: 'Icon',
+    },
+  ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
