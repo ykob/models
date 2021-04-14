@@ -40,20 +40,20 @@ export default {
   align-items: center;
   text-align: center;
   &__statuscode {
-    .pc & {
+    @include l-pc {
       margin-bottom: 12px;
       font-size: 81px;
     }
-    .mobile & {
+    @mixin l-mobile {
       margin-bottom: 8px;
       font-size: 48px;
     }
   }
   &__message {
-    .pc & {
+    @include l-pc {
       font-size: 42px;
     }
-    .mobile & {
+    @mixin l-mobile {
       font-size: 28px;
     }
   }

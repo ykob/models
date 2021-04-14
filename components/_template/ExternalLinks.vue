@@ -47,20 +47,20 @@ export default {
   display: flex;
   position: fixed;
   z-index: z(externalLinks);
-  .pc & {
+  @include l-pc {
     top: 5%;
     right: 5%;
   }
-  .mobile & {
+  @mixin l-mobile {
     top: 16px;
     right: 16px;
   }
   a {
     display: block;
-    .pc & {
+    @include l-pc {
       margin-left: 16px;
     }
-    .mobile & {
+    @mixin l-mobile {
       margin-left: 8px;
     }
   }

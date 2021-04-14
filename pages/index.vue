@@ -46,11 +46,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  .pc & {
+  @include l-pc {
     right: 5%;
     left: 5%;
   }
-  .mobile & {
+  @mixin l-mobile {
     right: 16px;
     left: 16px;
   }

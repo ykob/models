@@ -26,12 +26,12 @@ export default {
   justify-content: center;
   align-items: center;
   letter-spacing: 0.06em;
-  .pc & {
+  @include l-pc {
     height: 40px;
     top: 5%;
     font-size: 32px;
   }
-  .mobile & {
+  @mixin l-mobile {
     height: 32px;
     top: 16px;
     font-size: 21px;
