@@ -19,7 +19,11 @@ export default {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, user-scalable=no',
       },
-      { hid: 'description', name: 'description', content: 'It is my learning records of Blender.' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'It is my learning records of Blender.',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
