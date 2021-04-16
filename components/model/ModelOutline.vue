@@ -5,11 +5,27 @@
       |{{ title }}
     p.date
       |Update: {{ update }}
+    ul.assets(
+      v-if = 'assets.length > 0'
+      )
+      li(
+        v-for = 'item, index in items'
+        :key = '"assets-" + id + "-" + index'
+        )
+        a(
+          :href = 'item.href'
+          target = '_blank'
+          )
+          |{{ item.label }}
 </template>
 
 <script>
 export default {
   props: {
+    id: {
+      type: String,
+      default: '',
+    },
     title: {
       type: String,
       default: '',
@@ -17,6 +33,10 @@ export default {
     update: {
       type: String,
       default: '1.1.2021',
+    },
+    assets: {
+      type: Array,
+      default: () => [],
     },
   },
 }

@@ -1,6 +1,7 @@
 <template lang="pug">
 div
   ModelOutline(
+    :id = '$route.params.id'
     :title = 'title'
     :update = 'update'
     )
