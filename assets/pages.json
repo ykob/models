@@ -3,5 +3,10 @@
     "id": "sword",
     "title": "Sword",
     "update": "1.23.2021"
+  },
+  {
+    "id": "stone",
+    "title": "Stone",
+    "update": "4.30.2021"
   }
 ]

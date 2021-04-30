@@ -105,6 +105,16 @@ export default class WebGLContent {
             }
           })
         break
+      case 'stone':
+        await this.glTFLoader
+          .loadAsync('/models/stone.glb')
+          .then((response) => {
+            model = response.scene.children.find((o) => {
+              return o.name === 'Stone'
+            })
+            model.castShadow = true
+          })
+        break
       default:
         break
     }
