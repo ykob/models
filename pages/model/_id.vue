@@ -4,6 +4,7 @@ div
     :id = '$route.params.id'
     :title = 'title'
     :update = 'update'
+    :assets = 'assets'
     )
 </template>
 
@@ -25,11 +26,13 @@ export default {
     return {
       title: page.title,
       update: page.update,
+      assets: page.assets,
     }
   },
   data: () => ({
     title: '',
     update: '',
+    assets: [],
   }),
   head() {
     return {

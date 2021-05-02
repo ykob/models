@@ -9,14 +9,14 @@
       v-if = 'assets.length > 0'
       )
       li(
-        v-for = 'item, index in items'
+        v-for = 'item, index in assets'
         :key = '"assets-" + id + "-" + index'
         )
         a(
-          :href = 'item.href'
+          :href = 'item.src'
           target = '_blank'
           )
-          |{{ item.label }}
+          |{{ item.name }}
 </template>
 
 <script>
@@ -96,6 +96,11 @@ export default {
     .mobile.landscape & {
       font-size: 2.5vw;
     }
+  }
+  .assets {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 }
 </style>

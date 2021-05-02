@@ -7,6 +7,12 @@
   {
     "id": "stone",
     "title": "Stone",
-    "update": "4.30.2021"
+    "update": "4.30.2021",
+    "assets": [
+      {
+        "name": "Texture",
+        "src": "https://cc0textures.com/view?id=Rock037"
+      }
+    ]
   }
 ]
